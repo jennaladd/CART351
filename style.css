@@ -1,0 +1,18 @@
+
+h1, h2 {
+  font-family: helvetica;
+  letter-spacing: 100px;
+  margin-left: 50PX;
+  color: white;
+}
+body{
+  background: black;
+  font-family: helvetica;
+  color: blue;
+}
+div {
+    overflow: scroll;
+}
+.red{
+  float: right;
+}
