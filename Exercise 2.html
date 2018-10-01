@@ -1,0 +1,242 @@
+<html>
+<head>
+  <title> Canvas Tutorial </title>
+  <body>
+  <button id="btn1">Sun/Moon</button>
+   <p> <img alt="" src="moon.gif" id="image" onclick="changeImage"alt="Main" width="4920" height="180" ></p>
+
+ </body>
+
+  <style>
+  canvas {
+    background:black;
+    margin:0;
+  }
+  body{
+    background:black;
+    margin:0;
+    padding:0;
+  }
+  </style>
+  <script>
+  /*** THIS EX SHOWS THE BASIC SETUP ****/
+  //only run this once the window loads
+  window.onload = function(){
+// step 1 access the canvas element && the graphics context....
+let canvas = document.getElementById('testCanvas');
+let canvasContext = canvas.getContext('2d');
+// create an "instance"
+let lines1 = new Lines(canvas.width/2,0,0,"#FFFFFF");
+let lines2 = new Lines(500,0,0,"#FFFFFF");
+let lines3 = new Lines(canvas.width/2,0,0,"#FFFFFF");
+let lines4 = new Lines(800,0,0,"FFFFFF");
+let lines5 = new Lines(100,0,0,"#FFFFFF");
+let lines6 = new Lines(1200,0,0,"#FFFFFF");
+let lines7 = new Lines(500,0,0,"FFFFFF");
+let lines8 = new Lines(500,0,0,"#FFFFFF");
+let lines9 = new Lines(1000,0,0,"red");
+let lines10 = new Lines(1100,0,0,"blue");
+let lines11 = new Lines(canvas.width/2,0,0,"#FFFFFF");
+let lines12 = new Lines(500,0,0,"#FFFFFF");
+let lines13 = new Lines(canvas.width/2,0,0,"#FFFFFF");
+let lines14 = new Lines(1200,0,0,"FFFFFF");
+let lines15 = new Lines(4000,0,0,"#FFFFFF");
+let lines16 = new Lines(4200,0,0,"#FFFFFF");
+let lines17 = new Lines(2500,0,0,"FFFFFF");
+let lines18 = new Lines(2800,0,0,"#FFFFFF");
+let lines19 = new Lines(3500,0,0,"red");
+let lines20 = new Lines(3900,0,0,"blue");
+let lines21 = new Lines(2500,0,0,"FFFFFF");
+let lines22 = new Lines(2100,0,0,"#FFFFFF");
+let lines23 = new Lines(2000,0,0,"red");
+let lines24 = new Lines(2400,0,0,"blue");
+let lines25 = new Lines(2900,0,0,"blue");
+
+//let background = new myRunninback ("white")
+//invoke the render function
+requestAnimationFrame(loopingFunction);
+
+function loopingFunction(){
+canvasContext.clearRect(0,0,canvas.width,canvas.height);
+
+lines1.render();
+lines1.update();
+lines2.render();
+lines2.update();
+lines3.render();
+lines4.render();
+lines5.render();
+lines6.render();
+lines7.render();
+lines8.render();
+lines8.update();
+lines9.render();
+lines9.update();
+lines10.render();
+lines10.update();
+lines11.render();
+lines11.update();
+lines12.render();
+lines12.update();
+lines13.render();
+lines14.render();
+lines15.render();
+lines16.render();
+lines17.render();
+lines18.render();
+lines18.update();
+lines19.render();
+lines20.render();
+lines21.render();
+lines22.render();
+lines23.render();
+lines24.render();
+lines25.render();
+requestAnimationFrame(loopingFunction);
+}
+
+function changeImage() {
+
+        if (document.getElementById("image").src == "moon.gif")
+        {
+            document.getElementById("image").src = "Sun.gif";
+        }
+        else
+        {
+            document.getElementById("image").src = "moon.gif";
+        }
+    }
+  function Lines(x,y,r,c){
+  //member variables
+  this.xPos = x;
+  this.yPos = y;
+  this.radius = r;
+  this.ellipseColor = c;
+
+//member function
+  this.render =function(){
+      canvasContext.fillStyle = this.ellipseColor;// change the color we are using
+      canvasContext.strokeStyle = this.ellipseColor;
+      canvasContext.beginPath();
+      canvasContext.moveTo(this.xPos,this.yPos);
+      canvasContext.lineTo(this.xPos,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-5,this.yPos);
+      canvasContext.lineTo(this.xPos-5,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-10,this.yPos);
+      canvasContext.lineTo(this.xPos-10,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-20,this.yPos);
+      canvasContext.lineTo(this.xPos-20,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-25,this.yPos);
+      canvasContext.lineTo(this.xPos-25,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-30,this.yPos);
+      canvasContext.lineTo(this.xPos-30,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-35,this.yPos);
+      canvasContext.lineTo(this.xPos-35,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-40,this.yPos);
+      canvasContext.lineTo(this.xPos-40,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-45,this.yPos);
+      canvasContext.lineTo(this.xPos-45,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-50,this.yPos);
+      canvasContext.lineTo(this.xPos-50,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-55,this.yPos);
+      canvasContext.lineTo(this.xPos-55,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-60,this.yPos);
+      canvasContext.lineTo(this.xPos-60,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-65,this.yPos);
+      canvasContext.lineTo(this.xPos-65,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-70,this.yPos);
+      canvasContext.lineTo(this.xPos-70,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-75,this.yPos);
+      canvasContext.lineTo(this.xPos-75,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-80,this.yPos);
+      canvasContext.lineTo(this.xPos-80,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-85,this.yPos);
+      canvasContext.lineTo(this.xPos-85,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-90,this.yPos);
+      canvasContext.lineTo(this.xPos-90,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-95,this.yPos);
+      canvasContext.lineTo(this.xPos-95,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-100,this.yPos);
+      canvasContext.lineTo(this.xPos-100,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-105,this.yPos);
+      canvasContext.lineTo(this.xPos-105,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-110,this.yPos);
+      canvasContext.lineTo(this.xPos-110,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-115,this.yPos);
+      canvasContext.lineTo(this.xPos-115,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-120,this.yPos);
+      canvasContext.lineTo(this.xPos-120,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-125,this.yPos);
+      canvasContext.lineTo(this.xPos-125,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-130,this.yPos);
+      canvasContext.lineTo(this.xPos-130,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-135,this.yPos);
+      canvasContext.lineTo(this.xPos-135,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-140,this.yPos);
+      canvasContext.lineTo(this.xPos-140,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-145,this.yPos);
+      canvasContext.lineTo(this.xPos-145,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-150,this.yPos);
+      canvasContext.lineTo(this.xPos-150,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-155,this.yPos);
+      canvasContext.lineTo(this.xPos-155,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-160,this.yPos);
+      canvasContext.lineTo(this.xPos-160,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-165,this.yPos);
+      canvasContext.lineTo(this.xPos-165,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-170,this.yPos);
+      canvasContext.lineTo(this.xPos-170,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-175,this.yPos);
+      canvasContext.lineTo(this.xPos-175,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-180,this.yPos);
+      canvasContext.lineTo(this.xPos-180,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-185,this.yPos);
+      canvasContext.lineTo(this.xPos-185,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-190,this.yPos);
+      canvasContext.lineTo(this.xPos-190,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-195,this.yPos);
+      canvasContext.lineTo(this.xPos-195,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-200,this.yPos);
+      canvasContext.lineTo(this.xPos-200,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-205,this.yPos);
+      canvasContext.lineTo(this.xPos-205,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-210,this.yPos);
+      canvasContext.lineTo(this.xPos-210,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-215,this.yPos);
+      canvasContext.lineTo(this.xPos-215,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-220,this.yPos);
+      canvasContext.lineTo(this.xPos-220,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-225,this.yPos);
+      canvasContext.lineTo(this.xPos-225,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-230,this.yPos);
+      canvasContext.lineTo(this.xPos-230,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-235,this.yPos);
+      canvasContext.lineTo(this.xPos-235,this.yPos+9000);
+      canvasContext.moveTo(this.xPos-230,this.yPos);
+      canvasContext.lineTo(this.xPos-230,this.yPos+9000);
+      canvasContext.stroke();
+      canvasContext.closePath(); //close a path ...
+
+    }
+
+    this.update = function(){
+      if(this.xPos>0){
+      this.xPos=this.xPos- 20;
+    }
+    else {
+      this.xPos = canvas.width;
+    }
+
+    }
+  } //end myRunningEllipse
+}//end window onload
+  </script>
+</head>
+<body>
+<canvas id="testCanvas" width="4920" height="1080">
+
+</canvas>
+
+
+</body>
+</html>

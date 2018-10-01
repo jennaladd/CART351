@@ -1,5 +1,5 @@
 alert("hello you are now entering paralleling alternatives")
-
+ {"browser":"google chrome"}
 // moving box
 window.onload = function()
 {
