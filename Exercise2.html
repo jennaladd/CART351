@@ -1,0 +1,139 @@
+<html>
+<head>
+  <title> Canvas Tutorial </title>
+  <body>
+  <button id="btn1">Sun/Moon</button>
+
+
+ </body>
+
+  <style>
+  canvas {
+    background:black;
+    margin:0;
+  }
+  body{
+    background:black;
+    margin:0;
+    padding:0;
+  }
+  </style>
+  <script>
+  /*** THIS EX SHOWS THE BASIC SETUP ****/
+  //only run this once the window loads
+  window.onload = function(){
+
+
+
+
+// step 1 access the canvas element && the graphics context....
+let canvas = document.getElementById('testCanvas');
+let canvasContext = canvas.getContext('2d');
+// create an "instance"
+//let lines1 = new Line(canvas.width/2,20,0,"#FFFFFF");
+
+let lines = [];
+
+let step = 10;
+//step are the spacs between each line
+
+let switchColor = false;
+//have varibale as false so you can switch it
+
+document.getElementById("btn1").addEventListener("click", function(){
+  console.log("jenna");
+  switchColor = !switchColor;
+
+  if(switchColor ===true){
+    for(let i = 0; i < 200; i++){
+      //
+    lines[i].ellipseColor = "#ff0000";
+  }
+}
+
+if(switchColor ===false){
+  for(let i = 0; i < 200; i++){
+  lines[i].ellipseColor = "#ffffff";
+}
+}
+
+
+
+
+});
+//let lines = [];
+
+//instantiating (calling or creating)
+for(let i = 0; i < 200; i++){
+  //let line = new Lines(i*step,0,0,"#FFFFFF");
+  lines.push(new Line(i*step,20,0,"#FFFFFF"));
+}
+
+//let background = new myRunninback ("white")
+//invoke the render function
+requestAnimationFrame(loopingFunction);
+
+function loopingFunction(){
+canvasContext.clearRect(0,0,canvas.width,canvas.height);
+
+//moving theme
+for(let i = 0; i < 200; i++){
+  lines[i].render();
+  lines[i].update();
+  //lines[i].borders();
+
+}
+//let borders = {
+  //defintion
+//}
+
+//lines1.render();
+
+requestAnimationFrame(loopingFunction);
+}
+
+  function Line(x,y,r,c){
+  //member variables
+  this.xPos = x;
+  this.yPos = y;
+  this.radius = r;
+  this.ellipseColor = "#ffffff";
+
+  //member function
+  this.render = function(){
+      canvasContext.fillStyle = this.ellipseColor;// change the color we are using
+      canvasContext.strokeStyle = this.ellipseColor;
+      canvasContext.beginPath();
+
+      canvasContext.moveTo(this.xPos-5,this.yPos);
+      canvasContext.lineTo(this.xPos,this.yPos+9000);
+
+      canvasContext.stroke();
+      canvasContext.closePath(); //close a path ...
+        //canvasContext.moveTo(this.xPos*5,this.yPos*5);
+
+    }
+
+    this.update = function(){
+      if(this.xPos>0){
+      this.xPos=this.xPos- 20;
+    }
+    else {
+      this.xPos = canvas.width;
+    }
+
+    }
+  //} //end myRunningEllipse
+  }
+}//end window onload
+  </script>
+</head>
+<body>
+  <input type="text" id="getSearch" value="Load Data" />
+<canvas id="testCanvas" width="4920" height="1080">
+
+</canvas>
+
+
+</body>
+</html>

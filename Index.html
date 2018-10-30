@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>Jenna Ladd</title>
+<head>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+<body>
+    <video id="myVideo">
+      <source src="On delay.mp4" type="video/mp4">
+    </video>
+
+<div class = "container">
+	 <h1><strong>Jenna Ladd</strong></h1>__暗闇の中で溺れている静けさは存在せず、私は絶えず暗闇の中を移動し、月光を飲み込む
+   <h2><a href="https://www.instagram.com/?hl=en" target="_blank"> <strong> @_II_IIIIII </strong></a></h2>
+
+<center>
+
+    <br><button id= "github" onclick="window.location='https://github.com/jennaladd';">Github</button></br>
+    <input type="text" id="getSearch1" value="Hello" />
+    <input type="text" id="getSearch1" value="Only" />
+    <input type="text" id="getSearch1" value="one" />
+    <input type="text" id="getSearch1" value="Command" />
+    <input type="text" id="getSearch" value="Assignments" />
+    <input type="button" id="getData" value="Querry" />
+    <button id= "github" onclick="window.location='https://hybrid.concordia.ca/je_ladd/Assignements.html';">Assignements</button>
+
+<header></header>
+<section></section>
+</center>
+</div>
+<br><br/><br><br/><br><br/><br><br/><br><br/><br><br/><br><br/><br><br/>
+</body>
+
+<script src = "jquery-3.3.1.min.js"></script>
+<script src= "style.js"></script>
+<script>
+
+
+$(document).ready(function(){
+let header = $('header');
+let section = $('section');
+let valFromUser = "";
+
+$("#getData").click(function(event) {
+ console.log("clicked");
+ $.getJSON('Links.json',function(data) {
+   valFromUser=$("#getSearch").val();
+
+   console.log(data);
+   console.log(valFromUser);
+   showTitle(data);
+   showDay(data);
+
+ })
+ .fail(function() {
+   console.log( "error" );
+ });
+});
+
+function showTitle(data){
+ $(header).empty()
+ let sampleHeader = $("<h1>");
+ $(sampleHeader).text(data.Title);
+ $(sampleHeader).appendTo(header);
+}
+
+function showDay(data){
+ $(section).empty()
+ let keysOfDays = Object.keys(data);
+  for (var i = 1; i < keysOfDays.length ; i=i+1) {
+     let currentDay  = data[keysOfDays[i]];
+
+     if(valFromUser.toLowerCase() === keysOfDays[i].toLowerCase()){
+       console.log(currentDay[0]);
+       let samplePara1 = $("<p>");
+       samplePara1.text(currentDay[0].Day);
+         $(samplePara1).appendTo(section);
+
+       let samplePara2 = $("<p>");
+         samplePara2.text(currentDay[0].Hour);
+           $(samplePara2).appendTo(section);
+
+       let samplePara3 = $("<p>");
+         samplePara3.text(currentDay[0].Idea);
+             $(samplePara3).appendTo(section);
+
+       let samplePara4 = $("<p>");
+         samplePara4.text(currentDay[0].Feeling);
+               $(samplePara4).appendTo(section);
+       }
+   }
+}
+
+});
+
+</script>
+<script>
+
+    window.onload = function(){
+
+       window.addEventListener("click", function(){
+        document.getElementById('myVideo').play();
+        console.log("test");
+
+      })
+
+  }
+</script>
+
+</html>

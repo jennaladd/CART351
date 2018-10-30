@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+   <title>Jenna Thoughts</title>
+  <script src = "jquery-3.3.1.min.js"></script>
+   <script>
+
+
+   $(document).ready(function(){
+   let header = $('header');
+   let section = $('section');
+   let valFromUser = "";
+
+   $("#getData").click(function(event) {
+    console.log("clicked");
+    $.getJSON('State.json',function(data) {
+      valFromUser=$("#getSearch").val();
+
+      console.log(data);
+      console.log(valFromUser);
+      showTitle(data);
+      showDay(data);
+
+    })
+    .fail(function() {
+      console.log( "error" );
+    });
+  });
+
+  function showTitle(data){
+    $(section).empty()
+    let sampleHeader = $("<h1>");
+    $(sampleHeader).text(data.Title);
+    $(sampleHeader).appendTo(header);
+  }
+
+  function showDay(data){
+    $(section).empty()
+    let keysOfDays = Object.keys(data);
+     for (var i = 1; i < keysOfDays.length ; i=i+1) {
+        let currentDay  = data[keysOfDays[i]];
+
+        if(valFromUser.toLowerCase() === keysOfDays[i].toLowerCase()){
+          console.log(currentDay[0]);
+          let samplePara1 = $("<p>");
+          samplePara1.text(currentDay[0].Day);
+            $(samplePara1).appendTo(section);
+
+          let samplePara2 = $("<p>");
+            samplePara2.text(currentDay[0].Hour);
+              $(samplePara2).appendTo(section);
+
+          let samplePara3 = $("<p>");
+            samplePara3.text(currentDay[0].Idea);
+                $(samplePara3).appendTo(section);
+
+          let samplePara4 = $("<p>");
+            samplePara4.text(currentDay[0].Feeling);
+                  $(samplePara4).appendTo(section);
+          }
+      }
+}
+
+});
+
+</script>
+
+  </head>
+
+  <style>
+
+html {
+  font-family: "Courier New", Courier, monospace;
+  background-color: grey;
+}
+
+h1 {
+  margin-right:50vw;
+  color: White;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+
+}
+
+section {
+  font-size:1em;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  margin-right:0vw;
+  color: white;
+  font-size: 15px;
+
+
+
+}
+
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: -5px;
+  font-family: "Courier New", Courier, monospace;
+
+}
+#getData{
+  background:yellow;
+  width:100px;
+  margin:2%;
+  font-family: "Courier New", Courier, monospace;
+}
+#getSearch{
+  background:blue;
+  width:600px;
+  margin:5%;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+}
+#BM{
+  background:red;
+  width:100px;
+  margin:5%;
+  font-family: "Courier New", Courier, monospace;
+}
+#Home{
+  background:green;
+  width:110px;
+  margin:5%;
+  font-family: "Courier New", Courier, monospace;
+}
+
+  </style>
+
+  <body>
+    <center>
+  <h3> ROCK IN THE STREAM <h3/>
+  <button id= "Home" onclick="window.location='https://hybrid.concordia.ca/je_ladd/';">Jenna Website</button>
+  <input type="text" id="getSearch" value="Hello There you have the opportunity to stream random moments, keydown> day(1,2,3,4,5,6)" />
+  <button id= "BM" onclick="window.location='https://beyondmeat.com/products/view/beyond-burger';">Beyond Meat</button>
+  <input type="button" id="getData" value="Load Data" />
+
+<center/>
+      <header>
+
+
+
+      </header>
+
+      <section>
+
+      </section>
+
+
+  </body>
+</html>
