@@ -1,0 +1,78 @@
+{
+  "Title":"Conscious Thoughts",
+  "Day1":
+  [
+    {
+      "Day": "Day 1",
+      "Hour":"3am",
+      "Idea":"why am I awake, is it becasue of the coffee or the conscious?",
+      "Feeling":"feeling confused but relaxed"
+
+   }
+ ],
+
+ "Day2":
+ [
+   {
+     "Day": "Day 2",
+     "Hour":"2:11pm",
+     "Idea":"Why is movement so peacefull?",
+     "Feeling":"Relaxed yet curiouse"
+
+  }
+],
+"Day3":
+[
+  {
+    "Day": "Day 3",
+    "Hour":"5:22pm",
+    "Idea":"Super hungry, should i get a beyond meat burger or not?",
+    "Feeling":"hunger is an illusion...hunger is an illusion... need...want..."
+
+ }
+],
+"Day4":
+[
+  {
+   "Day": "Day 4",
+   "Hour":"8:59am",
+   "Idea":"Why am I awake, should i sleep and submit myself to rem dreams,they are always reflect want I want to hide",
+   "Feeling":"ugh"
+
+}
+],
+"Day5":
+[
+  {
+  "Day": "Day 5",
+  "Hour":"1:48am",
+  "Idea":"oh mon dieu have I eaten too many perogies",
+  "Feeling":"I feel like a potato"
+
+}
+],
+
+"Day6":
+[
+  {
+  "Day": "Day 6",
+  "Hour":"5:32pm",
+  "Idea":"If I just at perogies for the whole month it would cost 40.43$ for the entire month and only 480$ a year though I would have to eat people's potato everyday as well",
+  "Feeling":"That's a lot of potatoes"
+
+}
+
+],
+
+"Day7":
+[
+  {
+  "Day": "Day 7",
+  "Hour":"3:12pm",
+  "Idea":"noticing how people move and merge in different patterns and then joining the stream",
+  "Feeling":"watching over disconnection and connection "
+
+}
+
+]
+  }
